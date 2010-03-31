@@ -8,6 +8,8 @@ require 'webrat'
 
 Test::Unit::TestCase.send :include, Rack::Test::Methods
 
+enable :sessions
+
 def app
   Sinatra::Application
 end
