@@ -1,14 +1,12 @@
 require 'rubygems'
 require 'sinatra'
+require 'helpers'
 
 enable :sessions
 
+include Helpers
+
 get '/' do
-  session[:blah] = 'blah, blah'
-  redirect '/something'
+  authorise!
+  'hi!'
 end
-
-get '/something' do
-  session[:blah]
-end
-
